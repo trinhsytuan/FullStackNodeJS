@@ -1,15 +1,13 @@
+require("dotenv").config();
 const express = require("express");
 const app = express();
 const port = 3000;
-console.log(process.env.PORT);
+const configViewEngine = require("../src/config/viewEngine");
 const path = require("path");
+const webRouter = require('./routes/web')
+configViewEngine(app);
 
-app.set("views", path.join(__dirname, "views"));
-app.set("view engine", "ejs");
-app.use(express.static(path.join(__dirname, "static")));
-app.get("/", (req, res) => {
-  res.render("sample");
-});
+app.use('/', webRouter)
 app.listen(port, () => {
   console.log("TServices running is port" + port);
 });

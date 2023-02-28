@@ -8,6 +8,7 @@ const {
 const router = express.Router();
 
 router.get("/", getHomePage);
+
 router.post("/add-user", portCreateUser);
 router.get("/viewUser", viewUser);
 router.get("/ChaoTuan", getTuan);

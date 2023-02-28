@@ -12,6 +12,7 @@ const viewUser = async (req, res) => {
 const getTuan = (req, res) => {
   res.send("TNodeServices");
 };
+
 const portCreateUser = async (req, res) => {
   let { txtName, lname, city } = req.body;
   const ress = await addUser(txtName, lname, city);
